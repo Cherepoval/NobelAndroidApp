@@ -3,13 +3,9 @@ package com.example.nobeluserprofilepage;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -23,10 +19,12 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private int selectedAvatar;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,57 +41,76 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        ImageButton imageButton = findViewById(R.id.avatarButton);
-
-
-
     }
 
-    public void displayToast(String massage){
-        Toast.makeText(getApplicationContext(),massage,Toast.LENGTH_SHORT).show();
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        getAvatarView().setImageResource(selectedAvatar);
     }
 
     public void avatarClick (View view){
-
-
-        displayToast("Change with success !");
+        ImageView image1 = findViewById(R.id.image1);
+        ImageView image2 = findViewById(R.id.image2);
+        ImageView image3 = findViewById(R.id.image3);
+        ImageView image4 = findViewById(R.id.image4);
+        ImageView image5 = findViewById(R.id.image5);
+        image1.setVisibility(View.VISIBLE);
+        image2.setVisibility(View.VISIBLE);
+        image3.setVisibility(View.VISIBLE);
+        image4.setVisibility(View.VISIBLE);
+        image5.setVisibility(View.VISIBLE);
     }
 
+    public ImageView getAvatarView(){
+        return findViewById(R.id.profileHeaderImage);
+    }
+
+
     public void image1Click (View view){
-        ImageView avatar = findViewById(R.id.profileImage);
-        avatar.setImageResource(R.drawable.avatar1);
+        selectedAvatar = R.drawable.avatar1;
+        getAvatarView().setImageResource(selectedAvatar);
+        displayToast();
     }
 
     public void image2Click (View view){
-        ImageView avatar = findViewById(R.id.profileImage);
-        avatar.setImageResource(R.drawable.avatar2);
+        selectedAvatar = R.drawable.avatar2;
+        getAvatarView().setImageResource(selectedAvatar);
+        displayToast();
     }
 
-    public void image3Click (View view){
-        ImageView avatar = findViewById(R.id.profileImage);
-        avatar.setImageResource(R.drawable.avatar3);
+     public void image3Click (View view){
+        selectedAvatar = R.drawable.avatar3;
+        getAvatarView().setImageResource(selectedAvatar);
+        displayToast();
     }
 
     public void image4Click (View view){
-        ImageView avatar = findViewById(R.id.profileImage);
-        avatar.setImageResource(R.drawable.avatar4);
+        selectedAvatar = R.drawable.avatar4;
+        getAvatarView().setImageResource(selectedAvatar);
+        displayToast();
     }
 
     public void image5Click (View view){
-        ImageView avatar = findViewById(R.id.profileImage);
-        avatar.setImageResource(R.drawable.avatar5);
+        selectedAvatar = R.drawable.avatar5;
+        getAvatarView().setImageResource(selectedAvatar);
+        displayToast();
+    }
+
+    public void displayToast(){
+        Toast.makeText(getApplicationContext(),"Change with success !",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

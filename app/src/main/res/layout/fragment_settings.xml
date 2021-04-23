@@ -8,8 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profileHeader"
-        android:layout_width="411dp"
-        android:layout_height="154dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:background="@drawable/side_nav_bar"
         android:gravity="bottom"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
@@ -20,32 +20,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.001">
 
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:contentDescription="@string/nav_header_desc"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/profileName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/avatar1" />
-
         <TextView
             android:id="@+id/profileName"
             android:layout_width="201dp"
             android:layout_height="39dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
             android:layout_marginBottom="8dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:text="@string/nav_header_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/profileEmail"
-            app:layout_constraintStart_toStartOf="@+id/profileImage" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.941" />
 
         <TextView
             android:id="@+id/profileEmail"
@@ -66,15 +55,15 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@mipmap/nobel_icon_foreground" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profileContent"
-        android:layout_width="411dp"
-        android:layout_height="576dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +80,7 @@
             android:layout_marginRight="15dp"
             android:contentDescription="@string/image5"
             android:onClick="image5Click"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/image4"
@@ -106,6 +96,7 @@
             android:layout_marginTop="15dp"
             android:contentDescription="@string/image4"
             android:onClick="image4Click"
+            android:visibility="invisible"
             app:layout_constraintStart_toEndOf="@+id/image3"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:srcCompat="@drawable/avatar4" />
@@ -119,6 +110,7 @@
             android:layout_marginTop="15dp"
             android:contentDescription="@string/image3"
             android:onClick="image3Click"
+            android:visibility="invisible"
             app:layout_constraintStart_toEndOf="@+id/image2"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:srcCompat="@drawable/avatar3" />
@@ -130,6 +122,7 @@
             android:layout_marginTop="15dp"
             android:contentDescription="@string/image1"
             android:onClick="image1Click"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.229"
             app:layout_constraintStart_toStartOf="parent"
@@ -205,7 +198,7 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPostalAddress"
-            android:text="@string/adress"
+            android:text="@string/address"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -346,6 +339,7 @@
             android:layout_marginTop="15dp"
             android:contentDescription="@string/image2"
             android:onClick="image2Click"
+            android:visibility="invisible"
             app:layout_constraintStart_toEndOf="@+id/image1"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:srcCompat="@drawable/avatar2" />

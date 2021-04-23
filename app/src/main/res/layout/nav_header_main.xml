@@ -10,40 +10,46 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/profileImage"
+        android:id="@+id/profileHeaderImage"
         android:layout_width="79dp"
         android:layout_height="74dp"
+        android:layout_marginTop="28dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:layout_constraintBottom_toTopOf="@+id/profileName"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:srcCompat="@tools:sample/avatars[1]" />
+        app:srcCompat="@drawable/avatar1" />
 
     <TextView
         android:id="@+id/profileName"
         android:layout_width="201dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/profileEmail"
-        app:layout_constraintStart_toStartOf="@+id/profileImage" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileHeaderImage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/profileEmail"
         android:layout_width="201dp"
         android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/nav_header_subtitle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/profileName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/logoImage"
